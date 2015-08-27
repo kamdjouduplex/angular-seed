@@ -1,0 +1,47 @@
+<div ng-controller="HomeCtrl">
+<script>
+	$('#myTabs a').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	})
+</script>
+	<div class="row">
+		<div class="col col-sm-3">
+			<div ng-include="'components/leftmenu1.html'" scope="" onload=""></div>
+			<div ng-include="'components/leftmenu2.html'" scope="" onload=""></div>
+		</div>
+		<div class="col col-sm-7">
+			
+			<!-- all the code related to the post form  -->
+			<div>
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#ask" aria-controls="home" role="tab" data-toggle="tab">ask</a></li>
+					<li role="presentation"><a href="#search" aria-controls="profile" role="tab" data-toggle="tab">search</a></li>
+					<li role="presentation"><a href="#addpost" aria-controls="messages" role="tab" data-toggle="tab">post</a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active" id="ask">
+						<div ng-include="'components/askbar.html'" scope="" onload=""></div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="search">
+						<div ng-include="'components/searchbar.html'" scope="" onload=""></div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="addpost">
+						<div ng-include="'components/postbar.html'" scope="" onload=""></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- all code related to the content of the home page now(all post and so on) -->
+			<div class="card">
+				<div ng-include="'components/post.html'" scope="" onload=""></div>
+			</div>
+		</div>
+		<div class="col col-sm-2">
+			<div ng-include="'components/rightmenu.html'" scope="" onload=""></div>
+		</div>
+	</div>
+</div>
